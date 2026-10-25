@@ -1,0 +1,90 @@
+:root {
+  --z-nav: 20;
+  --z-dialog: 100;
+  --z-toast: 200;
+  --z-boot-error: 300;
+  --spinner-size: 36px;
+}
+
+body.dialog-open {
+  overflow: hidden;
+  overscroll-behavior: none;
+}
+
+input,
+select,
+textarea,
+.input {
+  font-size: max(16px, 1em);
+}
+
+.dialog-root {
+  z-index: var(--z-dialog);
+}
+
+.toast-root {
+  z-index: var(--z-toast);
+}
+
+.btn-hold-target {
+  touch-action: none;
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-touch-callout: none;
+}
+
+.btn:focus-visible,
+.nav-tab:focus-visible,
+.input:focus-visible,
+summary:focus-visible {
+  outline: var(--border-width-thick) solid var(--color-accent);
+  outline-offset: var(--space-4);
+}
+
+.status-card {
+  padding: var(--space-32) var(--space-24);
+}
+
+.loading-spinner {
+  width: var(--spinner-size);
+  height: var(--spinner-size);
+  border-radius: var(--radius-full);
+  border: var(--border-width-thick) solid var(--color-surface-muted);
+  border-top-color: var(--color-accent);
+  animation: patch2c-spin var(--duration-slow) linear infinite;
+}
+
+@keyframes patch2c-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.boot-error {
+  position: fixed;
+  inset: var(--space-16);
+  z-index: var(--z-boot-error);
+  background-color: var(--color-surface);
+  border: var(--border-width-thick) solid var(--color-danger);
+  border-radius: var(--radius-xl);
+  padding: var(--space-24);
+  box-shadow: var(--shadow-lg);
+  color: var(--color-text);
+  font-size: var(--font-md);
+  font-weight: var(--font-weight-semibold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .loading-spinner {
+    animation: none;
+    border-top-color: var(--color-accent);
+    border-right-color: var(--color-accent);
+  }
+}
