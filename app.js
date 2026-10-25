@@ -1,7 +1,7 @@
 // ============================================================================
 // 1. ВСТАВЬ СВОИ КЛЮЧИ SUPABASE СЮДА:
 // ============================================================================
-const SUPABASE_URL = 'https://robheofjlizpzbqmonjx.supabase.co/rest/v1/';
+const SUPABASE_URL = 'https://robheofjlizpzbqmonjx.supabase.co';
 const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJvYmhlb2ZqbGl6cHpicW1vbmp4Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTI5MTM3MDIsImV4cCI6MjEwODQ4OTcwMn0.xLdSrVfqO7ewWKboQVQiOpiG578UiSidT6mUPFWmML4';
 
 const supabaseClient = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
