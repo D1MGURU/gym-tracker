@@ -2,22 +2,28 @@
 <html lang="uk" data-theme="dark">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   <title>Gym Streak — Трекер залу</title>
   <meta name="theme-color" content="#0f172a" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  <meta name="apple-mobile-web-app-title" content="Gym Streak" />
   <link rel="manifest" href="/manifest.json" />
-  <link rel="apple-touch-icon" href="https://cdn-icons-png.flaticon.com/512/2964/2964514.png" />
+  <link rel="apple-touch-icon" href="/icons/apple-touch-icon.png" />
+  <link rel="icon" href="/icons/icon-192.png" />
   <link rel="stylesheet" href="/css/tokens.css" />
   <link rel="stylesheet" href="/css/base.css" />
   <link rel="stylesheet" href="/css/components.css" />
-  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <link rel="stylesheet" href="/css/patch-2c.css" />
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.49.1"></script>
 </head>
 <body>
+  <div id="boot-error" class="boot-error hidden" role="alert"></div>
+
   <div class="app-shell">
-    <!-- Контейнер авторизації та первинного вводу імені -->
     <main id="auth-mount" class="auth-mount hidden"></main>
 
-    <!-- Контейнер основного застосунку -->
     <div id="app-mount" class="app-mount hidden">
       <main id="screen-container" class="screen-container" role="main"></main>
 
@@ -42,10 +48,18 @@
     </div>
   </div>
 
-  <!-- Кореневі контейнери для діалогів і тостів -->
-  <div id="dialog-root" class="dialog-root" aria-live="polite"></div>
-  <div id="toast-root" class="toast-root" aria-live="assertive"></div>
+  <div id="dialog-root" class="dialog-root"></div>
+  <div id="toast-root" class="toast-root" aria-live="polite"></div>
 
+  <script>
+    if (!window.supabase) {
+      var bootEl = document.getElementById('boot-error');
+      if (bootEl) {
+        bootEl.textContent = 'Не вдалося завантажити застосунок. Перевір інтернет і онови сторінку';
+        bootEl.classList.remove('hidden');
+      }
+    }
+  </script>
   <script type="module" src="/js/router.js"></script>
 </body>
 </html>
