@@ -1,0 +1,137 @@
+:root {
+  /* Кольори поверхні та фону */
+  --color-bg: #0f172a;
+  --color-surface: #1e293b;
+  --color-surface-elevated: #0b1120;
+  --color-surface-muted: #334155;
+  --color-border: #334155;
+  --color-overlay: rgba(2, 6, 23, 0.78);
+
+  /* Кольори тексту */
+  --color-text: #f8fafc;
+  --color-text-secondary: #cbd5e1;
+  --color-text-muted: #94a3b8;
+  --color-text-inverse: #0f172a;
+
+  /* Семантичні та акцентні кольори */
+  --color-accent: #f97316;
+  --color-accent-hover: #ea580c;
+  --color-accent-soft: rgba(249, 115, 22, 0.16);
+  --color-info: #38bdf8;
+  --color-info-soft: rgba(56, 189, 248, 0.16);
+  --color-success: #22c55e;
+  --color-success-soft: rgba(34, 197, 94, 0.16);
+  --color-warning: #eab308;
+  --color-warning-soft: rgba(234, 179, 8, 0.16);
+  --color-danger: #ef4444;
+  --color-danger-soft: rgba(239, 68, 68, 0.16);
+
+  /* Кольори станів персонажа і вогника */
+  --color-state-goal-met: #f97316;
+  --color-state-growing: #38bdf8;
+  --color-state-at-risk: #ef4444;
+  --color-state-dead: #64748b;
+  --color-state-frozen: #60a5fa;
+
+  /* Типографіка */
+  --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+
+  --font-xs: 0.75rem;
+  --font-sm: 0.875rem;
+  --font-md: 1rem;
+  --font-lg: 1.125rem;
+  --font-xl: 1.375rem;
+  --font-2xl: 1.875rem;
+  --font-3xl: 2.5rem;
+
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  --font-weight-black: 900;
+
+  --line-height-tight: 1.15;
+  --line-height-base: 1.45;
+
+  /* Шкала відступів: 4 / 8 / 12 / 16 / 24 / 32 */
+  --space-4: 4px;
+  --space-8: 8px;
+  --space-12: 12px;
+  --space-16: 16px;
+  --space-24: 24px;
+  --space-32: 32px;
+
+  /* Радіуси */
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 20px;
+  --radius-full: 9999px;
+
+  /* Розміри інтерактивних елементів і макета */
+  --touch-target-min: 44px;
+  --nav-height: 64px;
+  --container-max-width: 440px;
+  --border-width: 1px;
+  --border-width-thick: 2px;
+
+  /* Розміри іконок та персонажів */
+  --flame-size-sm: 24px;
+  --flame-size-md: 36px;
+  --flame-size-lg: 52px;
+  --char-size-sm: 88px;
+  --char-size-md: 136px;
+  --char-size-lg: 184px;
+
+  /* Тіні */
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.2);
+  --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.32);
+  --shadow-lg: 0 16px 40px rgba(0, 0, 0, 0.48);
+
+  /* Тривалості анімацій */
+  --duration-fast: 150ms;
+  --duration-normal: 280ms;
+  --duration-slow: 600ms;
+  --duration-loop: 2400ms;
+  --duration-hold: 3000ms;
+  --ease-standard: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Альтернативна світла тема */
+[data-theme="light"] {
+  --color-bg: #f1f5f9;
+  --color-surface: #ffffff;
+  --color-surface-elevated: #f8fafc;
+  --color-surface-muted: #e2e8f0;
+  --color-border: #cbd5e1;
+  --color-overlay: rgba(15, 23, 42, 0.55);
+
+  --color-text: #0f172a;
+  --color-text-secondary: #334155;
+  --color-text-muted: #64748b;
+  --color-text-inverse: #ffffff;
+
+  --shadow-sm: 0 2px 6px rgba(15, 23, 42, 0.06);
+  --shadow-md: 0 6px 20px rgba(15, 23, 42, 0.1);
+  --shadow-lg: 0 12px 32px rgba(15, 23, 42, 0.18);
+}
+
+/* Повага до налаштувань зменшення руху */
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --duration-fast: 0ms;
+    --duration-normal: 0ms;
+    --duration-slow: 0ms;
+    --duration-loop: 0ms;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

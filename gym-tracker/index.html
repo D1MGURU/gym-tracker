@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="uk" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+  <title>Gym Streak — Трекер залу</title>
+  <meta name="theme-color" content="#0f172a" />
+  <link rel="manifest" href="/manifest.json" />
+  <link rel="apple-touch-icon" href="https://cdn-icons-png.flaticon.com/512/2964/2964514.png" />
+  <link rel="stylesheet" href="/css/tokens.css" />
+  <link rel="stylesheet" href="/css/base.css" />
+  <link rel="stylesheet" href="/css/components.css" />
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+<body>
+  <div class="app-shell">
+    <!-- Контейнер авторизації та первинного вводу імені -->
+    <main id="auth-mount" class="auth-mount hidden"></main>
+
+    <!-- Контейнер основного застосунку -->
+    <div id="app-mount" class="app-mount hidden">
+      <main id="screen-container" class="screen-container" role="main"></main>
+
+      <nav id="bottom-nav" class="bottom-nav" aria-label="Головна навігація">
+        <a href="#home" class="nav-tab" data-tab="home">
+          <span class="nav-icon" aria-hidden="true">🔥</span>
+          <span class="nav-label">Головна</span>
+        </a>
+        <a href="#pair" class="nav-tab" data-tab="pair">
+          <span class="nav-icon" aria-hidden="true">🤝</span>
+          <span class="nav-label">Пара</span>
+        </a>
+        <a href="#character" class="nav-tab" data-tab="character">
+          <span class="nav-icon" aria-hidden="true">🎒</span>
+          <span class="nav-label">Персонаж</span>
+        </a>
+        <a href="#profile" class="nav-tab" data-tab="profile">
+          <span class="nav-icon" aria-hidden="true">👤</span>
+          <span class="nav-label">Профіль</span>
+        </a>
+      </nav>
+    </div>
+  </div>
+
+  <!-- Кореневі контейнери для діалогів і тостів -->
+  <div id="dialog-root" class="dialog-root" aria-live="polite"></div>
+  <div id="toast-root" class="toast-root" aria-live="assertive"></div>
+
+  <script type="module" src="/js/router.js"></script>
+</body>
+</html>
